@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Question</title>
+</head>
+<body>
+    <h2>Add New Question</h2>
+    <form action="{{ url_for('add_question') }}" method="POST">
+        <label for="question_text">Question:</label>
+        <input type="text" id="question_text" name="question_text" required><br><br>
+
+        <label for="option_1">Option 1:</label>
+        <input type="text" id="option_1" name="option_1" required><br><br>
+
+        <label for="option_2">Option 2:</label>
+        <input type="text" id="option_2" name="option_2" required><br><br>
+
+        <label for="option_3">Option 3:</label>
+        <input type="text" id="option_3" name="option_3" required><br><br>
+
+        <label for="option_4">Option 4:</label>
+        <input type="text" id="option_4" name="option_4" required><br><br>
+
+        <label for="correct_answer">Correct Answer:</label>
+        <input type="text" id="correct_answer" name="correct_answer" required><br><br>
+
+        <input type="submit" value="Add Question">
+    </form>
+</body>
+</html>
