@@ -45,7 +45,7 @@ def load_user(user_id):
 
 @app.route('/')
 def home():
-    return "Welcome to the Quiz App! <a href='/login'>Login</a> or <a href='/register'>Register</a> to start."
+    return render_template('home.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -57,7 +57,7 @@ def register():
             flash('Username already taken, please choose another.')
             return redirect(url_for('register'))
         
-        hashed_password = generate_password_hash(password, method='sha256')
+        hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
         new_user = User(username=username, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
@@ -134,7 +134,6 @@ def quiz_question(question_number):
 def quiz_results():
     score = session.get('score', 0)
     
-    # Optionally, calculate percentage and display more detailed results
     total_questions = len(session.get('questions', []))
     percentage = (score / total_questions) * 100 if total_questions > 0 else 0
     

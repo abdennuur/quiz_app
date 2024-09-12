@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    margin: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Dashboard Section */
+.dashboard-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.dashboard-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.dashboard-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.dashboard-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dashboard-actions .btn, .dashboard-actions .btn-danger {
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.dashboard-actions .btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.dashboard-actions .btn:hover {
+    background-color: #0056b3;
+}
+
+.dashboard-actions .btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.dashboard-actions .btn-danger:hover {
+    background-color: #c82333;
+}

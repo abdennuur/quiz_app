@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+    <h2>Admin Dashboard</h2>
+    <a href="{{ url_for('add_question') }}" class="btn">Add New Question</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Question Text</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for question in questions %}
+            <tr>
+                <td>{{ question.id }}</td>
+                <td>{{ question.question_text }}</td>
+                <td>
+                    <a href="{{ url_for('edit_question', id=question.id) }}" class="btn">Edit</a>
+                    <form action="{{ url_for('delete_question', id=question.id) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

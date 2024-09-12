@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-</head>
-<body>
-    <h2>Welcome, {{ current_user.username }}!</h2>
-    <p>Ready to take the quiz?</p>
-    <a href="{{ url_for('quiz', question_id=1) }}">Start Quiz</a><br><br>
-    <a href="{{ url_for('logout') }}">Logout</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <section class="dashboard-section">
+        <h2>Welcome, {{ current_user.username }}!</h2>
+        <p>What would you like to do today?</p>
+
+        <div class="dashboard-actions">
+            <a href="{{ url_for('quiz') }}" class="btn">Start a Quiz</a>
+            <a href="{{ url_for('quiz_results') }}" class="btn">View Results</a>
+            <a href="{{ url_for('logout') }}" class="btn-danger">Logout</a>
+        </div>
+    </section>
+{% endblock %}
